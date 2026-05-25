@@ -1,0 +1,25 @@
+# MPHISHER - GitHub Actions
+# Placeholder para futuras automatizaciones
+
+name: MPHISHER CI
+
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Verificar estructura
+      run: |
+        echo "Verificando archivos..."
+        test -f mphisher.sh
+        test -d .sites
+        test -d scripts
+        echo "Estructura OK"
