@@ -1,0 +1,29 @@
+name: 'Lock Threads'
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  pull-requests: write
+  discussions: write
+
+concurrency:
+  group: lock
+
+jobs:
+  action:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: dessant/lock-threads@v4
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          issue-inactive-days: '30'
+          pr-inactive-days: '30'
+          issue-comment: >
+            Este issue ha sido bloqueado automáticamente porque estuvo inactivo por 30 días.
+            Por favor abre un nuevo issue si necesitas ayuda.
+          pr-comment: >
+            Este PR ha sido bloqueado automáticamente porque estuvo inactivo por 30 días.
