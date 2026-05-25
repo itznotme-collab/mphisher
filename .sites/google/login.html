@@ -1,152 +1,93 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar sesión - Google</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Roboto', sans-serif;
-        }
-        
-        body {
-            background: #f0f2f5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-        
-        .container {
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-        }
-        
-        .logo {
-            width: 75px;
-            margin-bottom: 20px;
-        }
-        
-        h1 {
-            font-size: 24px;
-            font-weight: 400;
-            margin-bottom: 10px;
-            color: #202124;
-        }
-        
-        .subtitle {
-            color: #5f6368;
-            font-size: 14px;
-            margin-bottom: 30px;
-        }
-        
-        .input-group {
-            margin-bottom: 20px;
-            text-align: left;
-        }
-        
-        input[type="email"],
-        input[type="password"] {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #dadce0;
-            border-radius: 4px;
-            font-size: 16px;
-            transition: border-color 0.3s;
-        }
-        
-        input[type="email"]:focus,
-        input[type="password"]:focus {
-            outline: none;
-            border-color: #1a73e8;
-        }
-        
-        .forgot {
-            text-align: left;
-            margin-bottom: 20px;
-        }
-        
-        .forgot a {
-            color: #1a73e8;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-        }
-        
-        .btn-next {
-            background: #1a73e8;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 4px;
-            font-size: 14px;
-            font-weight: 500;
-            cursor: pointer;
-            float: right;
-        }
-        
-        .btn-next:hover {
-            background: #1557b0;
-        }
-        
-        .create-account {
-            text-align: left;
-            margin-top: 30px;
-        }
-        
-        .create-account a {
-            color: #1a73e8;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-        }
-        
-        .footer {
-            margin-top: 40px;
-            font-size: 12px;
-            color: #5f6368;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicia sesión - Google</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #17181c;
+    }
+  </style>
 </head>
-<body>
-    <div class="container">
-        <img src="google.png" alt="Google" class="logo">
-        <h1>Iniciar sesión</h1>
-        <p class="subtitle">Usa tu cuenta de Google</p>
+<body class="min-h-screen flex items-center justify-center font-sans">
+  
+  <div class="w-full max-w-6xl px-6">
+    
+    <!-- Card -->
+    <div class="bg-[#202124] rounded-3xl shadow-2xl p-8 md:p-12 relative">
+      
+      <!-- Logo G pequeño en esquina superior izquierda -->
+      <div class="absolute top-6 left-8">
+        <img 
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1280px-Google_%22G%22_logo.svg.png" 
+          alt="Google" 
+          class="w-16 h-16">
+      </div>
+      
+      <div class="flex items-start gap-16 pt-8">
         
-        <form action="login.php" method="POST">
-            <div class="input-group">
-                <input type="email" name="email" placeholder="Correo electrónico o teléfono" required>
-            </div>
-            
-            <div class="input-group">
-                <input type="password" name="password" placeholder="Introduce tu contraseña" required>
-            </div>
-            
-            <div class="forgot">
-                <a href="#">¿Has olvidado tu correo electrónico?</a>
-            </div>
-            
-            <div style="overflow: hidden;">
-                <button type="submit" class="btn-next">Siguiente</button>
-            </div>
-        </form>
-        
-        <div class="create-account">
-            <a href="#">Crear cuenta</a>
+        <!-- Columna izquierda: Título (movido 1/5 a la izquierda) -->
+        <div class="w-2/5 -ml-3 pt-8">   <!-- Movido ligeramente a la izquierda -->
+          <h1 class="text-5xl font-medium text-white">Inicia sesión</h1>
+          <p class="text-gray-400 mt-2 text-xl">Utiliza tu cuenta de Google</p>
         </div>
-        
-        <div class="footer">
-            <p>Español (España) ▼</p>
+
+        <!-- Columna derecha: Formulario -->
+        <div class="flex-1 max-w-md">
+          <div class="space-y-4">
+            
+            <!-- Input Correo -->
+            <div>
+              <input 
+                type="text" 
+                class="w-full bg-transparent border border-gray-400 focus:border-blue-500 rounded-2xl px-6 py-4 text-white outline-none text-lg"
+                placeholder="Correo electrónico o teléfono">
+            </div>
+
+            <!-- Input Contraseña -->
+            <div>
+              <input 
+                type="password" 
+                class="w-full bg-transparent border border-gray-400 focus:border-blue-500 rounded-2xl px-6 py-4 text-white outline-none text-lg"
+                placeholder="Introduce tu contraseña">
+            </div>
+
+            <a href="#" class="text-blue-400 hover:underline text-sm block">
+              ¿Has olvidado tu correo electrónico?
+            </a>
+
+            <!-- Modo Invitado -->
+            <p class="text-sm text-gray-400 leading-relaxed">
+              ¿No es tu ordenador? Usa el modo Invitado para iniciar sesión de forma privada. 
+              <a href="#" class="text-blue-400 hover:underline">Más información sobre cómo usar el modo Invitado</a>
+            </p>
+
+            <!-- Botones -->
+            <div class="flex justify-between items-center pt-4">
+              <a href="#" class="text-blue-400 hover:underline font-medium">Crear cuenta</a>
+              <button class="bg-blue-500 hover:bg-blue-600 px-10 py-3 rounded-full text-white font-medium transition-colors">
+                Siguiente
+              </button>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+
+    <!-- Footer -->
+    <div class="mt-8 flex justify-between text-sm text-gray-400 px-4">
+      <div class="flex items-center gap-1 cursor-pointer">
+        Español (España) <span class="text-xs">▼</span>
+      </div>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-gray-200">Ayuda</a>
+        <a href="#" class="hover:text-gray-200">Privacidad</a>
+        <a href="#" class="hover:text-gray-200">Términos</a>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
